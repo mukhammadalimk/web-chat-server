@@ -1,0 +1,16 @@
+{
+  "name": "web-chat-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "author": "Mukhammadali",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

@@ -1,20 +1,15 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = __importDefault(require("express"));
-var cors_1 = __importDefault(require("cors"));
-var app = (0, express_1.default)();
+import express from "express";
+import cors from "cors";
+var app = express();
 var corsOptions = {
     origin: "https://web-chat-mk.vercel.app", // Allow this specific origin
     credentials: true, // Allow credentials (cookies, etc.)
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
     allowedHeaders: ["Content-Type", "Authorization"], // Custom headers allowed
 };
-app.use((0, cors_1.default)(corsOptions));
+app.use(cors(corsOptions));
 // Body parser
-app.use(express_1.default.json());
+app.use(express.json());
 app.post("/chat", function (req, res) {
     // Get message from req.body
     var message = req.body.message;
